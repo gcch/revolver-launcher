@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2015 NOIT, School a-apps project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <attr name="circle_radius" format="float" />
+
+    <!-- For CurvedClock -->
+    <declare-styleable name="CurvedClock">
+        <attr name="center_x" format="integer" />
+        <attr name="center_y" format="integer" />
+        <attr name="circle_radius" />
+        <attr name="text_offset" format="integer" />
+        <attr name="text_startangle" format="float" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="integer" />
+        <attr name="date_format" format="string" />
+        <attr name="draw_circle" format="boolean" />
+    </declare-styleable>
+
+
+    <!-- For CurvedBarMeterView -->
+    <declare-styleable name="CurvedBarMeterView">
+        <attr name="circle_center_x" format="integer" />
+        <attr name="circle_center_y" format="integer" />
+        <attr name="circle_radius" />
+        <attr name="label_text" format="string" />
+        <attr name="label_text_offset" format="float" />
+        <attr name="label_text_startangle" format="float" />
+        <attr name="label_text_color" format="color" />
+        <attr name="label_text_size" format="integer" />
+        <attr name="bar_start_angle" format="float" />
+        <attr name="bar_sweep_angle" format="float" />
+        <attr name="bar_width" format="float" />
+        <attr name="bar_color" format="color" />
+        <attr name="bar_back_color" format="color" />
+    </declare-styleable>
+
+    <!-- For CurvedIndexView -->
+    <declare-styleable name="CurvedIndexView">
+        <attr name="drawClockwise" format="boolean" />
+        <attr name="circleCenterX" format="integer" />
+        <attr name="circleCenterY" format="integer" />
+        <attr name="circleRadius" format="float" />
+        <attr name="startAngle" format="float" />
+        <attr name="sweepAngle" format="float" />
+        <attr name="dotRadius" format="float" />
+        <attr name="activeDotColor" format="color" />
+        <attr name="noActiveDotColor" format="color" />
+        <attr name="maxIndex" format="integer" />
+        <attr name="activeIndex" format="integer" />
+    </declare-styleable>
+
+
+</resources>

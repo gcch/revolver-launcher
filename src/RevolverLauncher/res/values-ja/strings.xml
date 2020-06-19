@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2015 NOIT, School a-apps project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <string name="app_name">Revolver Launcher</string>
+
+    <!-- Notification -->
+    <string name="notification_ticker">Revolver Launcher の実行中…</string>
+    <string name="notification_content_text">設定</string>
+    
+    <!-- Tab -->
+    <string name="tab_item_revolver">REVOLVER</string>
+    <string name="tab_item_settings">SETTINGS</string>
+    
+    <!-- Activity: About app -->
+    <string name="about_app_version">バージョン</string>
+    <string name="about_app_copyright">&#169; 2014-2015 School a-apps project / noit.</string>
+    
+    <!-- Dialog: Color -->
+    <string name="color_red">赤</string>
+    <string name="color_green">緑</string>
+    <string name="color_blue">青</string>
+    <string name="color_alpha">透過度</string>
+    
+    <!-- Dialog: Bar -->
+    <string name="bar_appear">ランチャー起動バーの表示</string>
+    <string name="bar_width">幅</string>
+    <string name="bar_height">高さ [%]</string>
+    <string name="bar_position">位置 [%]</string>
+    
+    <!-- Dialog: Pager -->
+    <string name="pager_page_number">ページ番号</string>
+    <string name="pager_move">移動</string>
+
+    <!-- Dialog: Action -->
+    <string name="setting_ok">OK</string>
+    <string name="setting_apply">適用</string>
+    <string name="setting_abort">キャンセル</string>
+    
+    <!-- Settings: Section head -->
+    <string name="setting_section_launcher">LAUNCHER</string>
+    <string name="setting_section_magazine">MAGAZINE</string>
+    <string name="setting_section_bullet">BULLET</string>
+    <string name="setting_section_starter_bar">STARTER BAR</string>
+    <string name="setting_section_general">GENERAL</string>
+    <string name="setting_section_special_button">SPECIAL BUTTON</string>
+    <string name="setting_section_accessory">ACCESSORY</string>
+    
+    <!-- Settings: Launcher -->
+    <string name="setting_enable_launcher">ランチャーの有効化</string>
+    <string name="setting_launcher_accessory_color">特殊キーとアクセサリの色</string>
+    <string name="setting_launcher_bg_color">背景色</string>
+    <string name="setting_enable_animation">アニメーションの有効化</string>
+    <string name="setting_enable_autorun_service">端末起動時に自動起動</string>
+    
+    <string name="setting_action_of_backkey">戻るキーの動作</string>
+    <string name="setting_action_of_backkey_back">戻る</string>
+    <string name="setting_action_of_backkey_close_launcher">ランチャーを閉じる</string>
+    
+    <!-- Settings: Magazine -->
+    <string name="setting_revolvers">連装数</string>
+    <string name="setting_revolver_rad">装填部の半径</string>
+    
+    <!-- Settings: Bullet -->
+    <string name="setting_bullets">弾数</string>
+    <string name="setting_bullets_size">弾の半径</string>
+    
+    <!-- Settings: Starter bar -->
+    <string name="setting_starterbar_left_state">左バーの有効化</string>
+    <string name="setting_starterbar_right_state">右バーの有効化</string>
+    <string name="setting_starterbar_left_size_pos">左バーのサイズと位置</string>
+    <string name="setting_starterbar_right_size_pos">右バーのサイズと位置</string>
+    <string name="setting_starterbar_color">バーの色</string>
+    
+    <!-- Settings: Special Button -->
+    <string name="setting_enable_backkey">戻る</string>
+    <string name="setting_enable_homekey">ホーム</string>
+    <string name="setting_enable_recentappskey">最近使ったアプリ</string>
+    <string name="setting_enable_notificationskey">通知領域展開</string>
+    
+    <!-- Settings: Accessory -->
+    <string name="setting_enable_clock">時計の有効化</string>
+    <string name="setting_custom_clock_and_date">時計と日付のカスタマイズ</string>
+    <string name="setting_enable_res_meter">リソースメータの有効化</string>
+    
+    <!-- Settings: General -->
+    <string name="about_app">アプリについて</string>
+    <string name="setting_upgrade_to_full_edition">広告の非表示化 (寄付)</string>
+    
+    <!-- Dialog: Time and Date -->
+    <string name="dialog_clock_and_date">時計と日時部のカスタマイズの有効化</string>
+    <string name="dialog_clock_font_size">時計部のフォントサイズ</string>
+    <string name="dialog_clock_baseline">時計部のベースライン</string>
+    <string name="dialog_date_font_size">日付部のフォントサイズ</string>
+    <string name="dialog_date_baseline">日付部のベースライン</string>
+    
+    <!-- Dialog: Starterbars disabled -->
+    <string name="staterbars_disabled_alert_dialog_title">Revolver Launcher</string>
+    <string name="staterbars_disabled_alert_dialog_message">起動バーの両側を同時に無効化することはできません。</string>
+    
+	<!-- Dialog: Backkey alert -->
+    <string name="backkey_alert">Back キーを有効化するためには、「ユーザー補助」内のサービス「Revolver Launcher」を有効化する必要があります。</string>
+    <string name="backkey_alert_accessivility_btn_text">「ユーザー補助」を開く</string>
+        
+    <!-- Dialog: Reload setting activity -->
+    <string name="reload_activity_alert">ライセンスが更新されました。アプリを再起動してください。</string>
+    <string name="reload_activity_alert_text">再起動</string>
+    
+    <!-- Dialog: Enable close the launcher with backkey -->
+    <string name="dialog_backkey_on_device_alert_title">Revolver Launcher</string>
+    <string name="dialog_backkey_on_device_alert_message">このオプションを有効化するためには、「ランチャー上の戻るをタップしたときランチャーを収納」を無効化する必要があります。</string>
+    
+    <!-- Dialog: Purchase error -->
+    <!-- 
+    <string name="purchase_error_alert_text">現在、購入することができません。\nAmazon アプリストアにログインできていない、またはネットワークアクセスができない状況などが考えられます。</string>
+     -->
+     
+    <!-- Accessibility Service: Description -->
+    <string name="accessibility_service_description">このサービスは Revolver Launcher 上の Back キーを機能させるためだけに使用されます。\n有効化しない場合には、Revolver Launcher 上の Back キーは動作しません。</string>
+    
+</resources>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2015 NOIT, School a-apps project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/jp.noit.revolverlauncher"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:hardwareAccelerated="true" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout_appsLauncher"
+        android:clipChildren="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <FrameLayout
+            android:id="@+id/frameLayout_appsLauncherItems"
+            android:clipChildren="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <!-- CircularLayout -->
+
+            <FrameLayout
+                android:id="@+id/frameLayout_circularLayout"
+                android:clipChildren="false"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <jp.noit.revolverlauncher.CircularLayout
+                    android:id="@+id/circularLayout"
+                    android:clipChildren="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+                </jp.noit.revolverlauncher.CircularLayout>
+            </FrameLayout>
+
+            <!-- CurvedResourceMeter -->
+
+            <FrameLayout
+                android:id="@+id/frameLayout_curvedResMeter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hardwareAccelerated="true" >
+
+                <jp.noit.revolverlauncher.CurvedCpuMeter
+                    android:id="@+id/cpu_meter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <jp.noit.revolverlauncher.CurvedMemMeter
+                    android:id="@+id/mem_meter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <jp.noit.revolverlauncher.CurvedBatMeter
+                    android:id="@+id/bat_meter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+            <!-- CurvedClock -->
+
+            <FrameLayout
+                android:id="@+id/frameLayout_curvedClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hardwareAccelerated="true" >
+
+                <jp.noit.revolverlauncher.CurvedClock
+                    android:id="@+id/curveclock_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:date_format="HH:mm" />
+
+                <!--
+                <jp.noit.revolverlauncher.CurvedClock
+                    android:id="@+id/curveclock_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:date_format="EEEE" />
+                -->
+
+                <jp.noit.revolverlauncher.CurvedClock
+                    android:id="@+id/curveclock_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:date_format="EEE., MMM. d, yyyy" />
+            </FrameLayout>
+
+            <!-- CurvedIndexView -->
+
+            <jp.noit.revolverlauncher.CurvedIndexView
+                android:id="@+id/curvedindexview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+    </FrameLayout>
+
+</FrameLayout>

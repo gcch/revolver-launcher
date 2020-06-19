@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2015 NOIT, School a-apps project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayoutForDialogColor"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/paramTvR"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/color_red"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:orientation="horizontal" >
+
+                <SeekBar
+                    android:id="@+id/paramR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:max="255"
+                    android:progress="127" />
+
+                <EditText
+                    android:id="@+id/paramEtR"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="3" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/paramTvG"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/color_green"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:orientation="horizontal" >
+
+                <SeekBar
+                    android:id="@+id/paramG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:max="255"
+                    android:progress="127" />
+
+                <EditText
+                    android:id="@+id/paramEtG"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="3" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/paramTvB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/color_blue"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:orientation="horizontal" >
+
+                <SeekBar
+                    android:id="@+id/paramB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:max="255"
+                    android:progress="127" />
+
+                <EditText
+                    android:id="@+id/paramEtB"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="3" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/paramTvA"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/color_alpha"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|left"
+                android:orientation="horizontal" >
+
+                <SeekBar
+                    android:id="@+id/paramA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:max="255"
+                    android:progress="127" />
+
+                <EditText
+                    android:id="@+id/paramEtA"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="3" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

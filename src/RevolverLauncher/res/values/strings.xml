@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2015 NOIT, School a-apps project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <string name="app_name">Revolver Launcher</string>
+
+    <!-- Notification -->
+    <string name="notification_ticker">Revolver Launcher is running</string>
+    <string name="notification_content_text">Settings</string>
+
+    <!-- Tab -->
+    <string name="tab_item_revolver">REVOLVER</string>
+    <string name="tab_item_settings">SETTINGS</string>
+
+    <!-- Activity: About app -->
+    <string name="about_app_version">Version</string>
+    <string name="about_app_copyright">&#169; 2014-2015 School a-apps project / noit.</string>
+
+    <!-- Dialog: Color -->
+    <string name="color_red">Red</string>
+    <string name="color_green">Green</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_alpha">Alpha</string>
+
+    <!-- Dialog: Bar -->
+    <string name="bar_appear">Display of bars</string>
+    <string name="bar_width">Width of bars</string>
+    <string name="bar_height">Height of bars [%]</string>
+    <string name="bar_position">Position of bars [%]</string>
+
+    <!-- Dialog: Pager -->
+    <string name="pager_page_number">Page number</string>
+    <string name="pager_move">Move</string>
+
+    <!-- Dialog: Action -->
+    <string name="setting_ok">OK</string>
+    <string name="setting_apply">Apply</string>
+    <string name="setting_abort">Abort</string>
+
+    <!-- Settings: Section head -->
+    <string name="setting_section_launcher">LAUNCHER</string>
+    <string name="setting_section_magazine">MAGAZINE</string>
+    <string name="setting_section_bullet">BULLET</string>
+    <string name="setting_section_starter_bar">STARTER BAR</string>
+    <string name="setting_section_general">GENERAL</string>
+    <string name="setting_section_special_button">SPECIAL BUTTON</string>
+    <string name="setting_section_accessory">ACCESSORY</string>
+
+    <!-- Settings: Launcher -->
+    <string name="setting_enable_launcher">Launcher</string>
+    <string name="setting_launcher_accessory_color">Color of special buttons and accessories</string>
+    <string name="setting_launcher_bg_color">Color of the launcher background</string>
+    <string name="setting_enable_animation">Enable animations</string>
+    <string name="setting_enable_autorun_service">Autorun service</string>
+
+    <string name="setting_action_of_backkey">Action of back</string>
+    <string name="setting_action_of_backkey_back">Back</string>
+    <string name="setting_action_of_backkey_close_launcher">Close launcher</string>
+    
+    <!-- Settings: Magazine -->
+   	<string name="setting_revolvers">Revolvers</string>
+    <string name="setting_revolver_rad">Radius</string>
+
+    <!-- Settings: Bullet -->
+    <string name="setting_bullets">Bullets</string>
+    <string name="setting_bullets_size">Size of bullets</string>
+
+    <!-- Settings: Starter bar -->
+    <string name="setting_starterbar_left_state">Left starter bar</string>
+    <string name="setting_starterbar_right_state">Right starter bar</string>
+    <string name="setting_starterbar_left_size_pos">Size of left bars</string>
+    <string name="setting_starterbar_right_size_pos">Size of right bars</string>
+    <string name="setting_starterbar_color">Color of bars</string>
+
+    <!-- Settings: Special Button -->
+    <string name="setting_enable_backkey">Back</string>
+    <string name="setting_enable_homekey">Home</string>
+    <string name="setting_enable_recentappskey">Recent Apps</string>
+    <string name="setting_enable_notificationskey">Notifications opener</string>
+
+    <!-- Settings: Accessory -->
+    <string name="setting_enable_clock">Enable clock</string>
+    <string name="setting_custom_clock_and_date">Customize clock and date</string>
+    <string name="setting_enable_res_meter">Enable resource meters</string>
+
+    <!-- Settings: General -->
+    <string name="about_app">About</string>
+    <string name="setting_upgrade_to_full_edition">Remove ads (donation)</string>
+
+    <!-- Dialog: Time and Date -->
+    <string name="dialog_clock_and_date">Enable to customize about clock and date</string>
+    <string name="dialog_clock_font_size">Font size of clock text</string>
+    <string name="dialog_clock_baseline">Baseline of clock text</string>
+    <string name="dialog_date_font_size">>Font size of date text</string>
+    <string name="dialog_date_baseline">Baseline of date text</string>
+    
+    <!-- Dialog: Starterbars disabled -->
+    <string name="staterbars_disabled_alert_dialog_title">Revolver Launcher</string>
+    <string name="staterbars_disabled_alert_dialog_message">Both the left and the right starter bar cannot be invisible.</string>
+
+    <!-- Dialog: Backkey alert -->
+    <string name="backkey_alert">You should permit to run the \"Revolver Launcher\" service in order to enable the back key.</string>
+    <string name="backkey_alert_accessivility_btn_text">Open "Accessibility" menu</string>
+
+    <!-- Dialog: Reload setting activity -->
+    <string name="reload_activity_alert">Your license is updated. Please reload this app.</string>
+    <string name="reload_activity_alert_text">Reload</string>
+
+    <!-- Dialog: Enable close the launcher with backkey on device -->
+    <string name="dialog_backkey_on_device_alert_title">Revolver Launcher</string>
+    <string name="dialog_backkey_on_device_alert_message">In order to enable this option, you must disable \"Close the launcher with backkey on launcher.\"</string>
+    
+        <!-- Dialog: Enable close the launcher with backkey on launcher -->
+    <string name="dialog_backkey_on_launcher_alert_title">Revolver Launcher</string>
+    <string name="dialog_backkey_on_launcher_alert_message">In order to enable this option, you must disable \"Close the launcher with backkey on device.\"</string>
+    
+    
+    <!-- Dialog: Purchase error -->
+    <!-- 
+    <string name="purchase_error_alert_text">Unfortunately, you cannot purchase this item.\nYou may not log in Amazon Apps with your Amazon credential or internet access may be disabled.</string>
+     -->
+     
+    <!-- Accessibility Service: Description -->
+    <string name="accessibility_service_description">This service is only used for detecting the back key event from \"Revolver Launcher.\"\nIf it is not permitted to run, you cannot use the back key on our launcher.</string>
+
+    <!-- for In-app Purchase -->
+    <string name="inapp_purchase_pubKey">TdVDSHuHGVaqQcNjibtjgdECuiFmji5IsEFkZS4jU01RajdeZYig8ZWq0HZcLbMGzkAivDbYkhXGs7yLk+6I+kmJAy1jnYmzLdw6tVA56WLy2VpB2geJlPs22MfNjK70LxCpy7zn7OePYWDkWS+gki4VyyVRAjLYxqAds6yW3xnuU+Ny4DGX1CpWE8nz5BRomE5pw+yfYlGKnG8SinSr7FSyjiKjiRFGNoZZqSF4KHYe+ovyX5n8XNNKdac6Jm0/sGfRrddwD9R3msVAlMK9w1z3GJS7QmcdAhlFrnP0HsCvEPUSPb2gSpMQYz4lLpCRgjgtrh7+LCcpqvwn5eRBETMaMZ7G+7NOyXbdExh409p51T4p1mtVrwqZQHgwxpjwbIXwzW5gbvC8aJI1utJq6xLR/XfjLidJmd2ILb/ThSqx8ShbpwtRjVpmgDJ1qbfUn329xaUg0grhuDGjhmz/BjCWesBN6c+MGMen7smdyhw5WqBJumNQ4FxaeqkHKJuJ8YcgPjli6EeCIW9LKtDNNmmanqkPj5U79lNh0bQIN9RMgOWnZlB3HZ8457V9j0B22dn4/BdKEMrorv5pncxXKG57H2TlCDlvddkx7YpBOueTEX06ZuUjcRoh570jDpFgSsxUKcnSHNdUNbd62ZOKd8+F7lN35Vx0i2iCuk4Goka0kdv+JMbGxfwTmYr90TGhS21ay9FvfvMscyFJiTAD+xTGV0hJLVR601TBBiSPkBJxvLk7FpeNPu6eESsR6kn3y1LACNME9phDpsjhqdDKkdpflMBJ3s4LvbxAoaqNeFnP2Q0Q/oPkHTtye6kAKooozPyBgeKVYetH+ObQ7Z/YwSZPny1Zu/RlhvrS5yT2REntte1i3wJ+ecBUJAB3luU5GRofSUaHLydTN+uLJ4IOZM5MDM2tB0YNKBMJWyZ9WNE8RGHfkBQsqThH87xvRfSqFJz89Choup/2evR3vrYKxskCzb5+43drH2kuNlczlaIl6KwT/946ZLtQpz5Hpb1SJAgCfK+EaSupStWnhK2lgloOh2o7CjhUxbo0vnmOkrhpF5oZd3cnJ49iCTo+42u4jLm2V7zlGE93he22HEje/h2/aCE36bpWpPjBc2KiN1He+rCkH20ev/EwIiMU4oDpdOauGQKx1Payfkr7M02OTxu9zgs2WZiOGdpkriWVk2CESZ41Agv9FIVTD+NVK/z4
+9Bs12I2dPrnfutHtnbXXJjMylid3ZW4AIylrkByDF59axWXuMLhf96GA1BAFFe5RnjWG4K/FY5nSVsQmK1BH6a3H1O4QR6BamGnv3CfnNXzhf0bRtyNktzr01iIRKbRUSYuXyfNgZFO+DeAcgiJbr6c/xLavTyR8ob17mwLYShg=</string>
+
+    <!-- for judging the app channel -->
+    <!-- --> <string name="channel">##### Revolver launcher - Release Channel (Amazon) #####</string> <!-- --> <!-- for release --> <!-- Amazon の文字を入れると、Amazon Apps 仕様に。 -->
+    <!-- -> <string name="channel">MYaaIKSNiostnOOSSH_yl</string> <!- --> <!-- for full -->
+
+</resources>

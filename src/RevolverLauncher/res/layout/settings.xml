@@ -1,0 +1,1394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2015 NOIT, School a-apps project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@+id/framelayout_tab_master"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabindicator"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/section_underline_divider_weight"
+                    android:layout_gravity="bottom" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <!-- Tab: Revolver -->
+
+                <LinearLayout
+                    android:id="@+id/contentlayout_tab_revolver"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="100" >
+
+                        <!-- リボルバー配置ビューとページ番号 -->
+
+                        <FrameLayout
+                            android:id="@+id/framelayout_magazine_pager_top"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center" >
+
+                            <!-- リボルバー配置ビュー -->
+
+                            <jp.noit.revolverlauncher.RevolverViewPager
+                                android:id="@+id/revolverviewpager"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:gravity="center" />
+
+                            <!-- リボルバー数 (ページ番号) -->
+
+                            <ImageView
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:src="@drawable/round" />
+
+                            <TextView
+                                android:id="@+id/revolver_page_num"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="1"
+                                android:textColor="#ffffff"
+                                android:textSize="36sp"
+                                android:textStyle="bold" />
+
+                            <FrameLayout
+                                android:id="@+id/framelayout_bin_top"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:visibility="gone" >
+
+                                <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:src="@drawable/ic_bin" />
+                            </FrameLayout>
+                        </FrameLayout>
+
+                        <!-- 前のリボルバボタン -->
+
+                        <LinearLayout
+                            android:layout_width="32dp"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="left"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:id="@+id/previous_revolver_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:gravity="center"
+                                android:paddingLeft="10dp"
+                                android:src="@drawable/ic_prev" />
+                        </LinearLayout>
+
+                        <!-- 次のリボルバボタン -->
+
+                        <LinearLayout
+                            android:layout_width="32dp"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="right"
+                            android:gravity="center"
+                            android:orientation="vertical" >
+
+                            <ImageView
+                                android:id="@+id/following_revolver_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:gravity="center"
+                                android:paddingRight="10dp"
+                                android:src="@drawable/ic_next" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <!-- ボーダーライン -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/item_divider_weight"
+                        android:layout_marginLeft="@dimen/horizontal_padding"
+                        android:layout_marginRight="@dimen/horizontal_padding"
+                        android:background="#33000000" />
+
+                    <!-- アプリアイコン一覧ビュー -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <HorizontalScrollView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content" >
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_pkgView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:orientation="vertical" >
+                            </LinearLayout>
+                        </HorizontalScrollView>
+                    </LinearLayout>
+
+                    <!-- ボーダーライン -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/item_divider_weight"
+                        android:background="#33000000" />
+
+                    <!-- 連装数・弾数 -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/item_area_height_narrow"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <!-- 連装数 -->
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_item_revolvers_revolver_revtab"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/item_selected_background"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal" >
+
+                            <ImageView
+                                android:layout_width="@dimen/item_icon_side_length"
+                                android:layout_height="@dimen/item_icon_side_length"
+                                android:layout_marginRight="@dimen/activity_vertical_margin"
+                                android:duplicateParentState="true"
+                                android:src="@drawable/ic_revolver" />
+
+                            <TextView
+                                android:id="@+id/textView_value_revolvers_revolver_revtab"
+                                android:layout_width="48dp"
+                                android:layout_height="fill_parent"
+                                android:duplicateParentState="true"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textSize="@dimen/item_text_size" />
+                        </LinearLayout>
+
+                        <!-- ボーダーライン -->
+
+                        <LinearLayout
+                            android:layout_width="@dimen/item_divider_weight"
+                            android:layout_height="fill_parent"
+                            android:background="#33000000" />
+
+                        <!-- 弾数 -->
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_item_bullets_revolver_revtab"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/item_selected_background"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal" >
+
+                            <ImageView
+                                android:layout_width="@dimen/item_icon_side_length"
+                                android:layout_height="@dimen/item_icon_side_length"
+                                android:layout_marginRight="@dimen/activity_vertical_margin"
+                                android:duplicateParentState="true"
+                                android:src="@drawable/ic_bullet" />
+
+                            <TextView
+                                android:id="@+id/textView_value_bullets_revolver_revtab"
+                                android:layout_width="48dp"
+                                android:layout_height="fill_parent"
+                                android:duplicateParentState="true"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textSize="@dimen/item_text_size" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Tab: Settings -->
+
+                <LinearLayout
+                    android:id="@+id/contentlayout_tab_settings"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <!-- Setting - begin -->
+
+                    <ScrollView
+                        android:id="@+id/scrollView_settings"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/horizontal_padding"
+                            android:paddingRight="@dimen/horizontal_padding" >
+
+                            <!-- 広告用スペース -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_adspace_1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/ad_vertical_margin"
+                                android:layout_marginTop="@dimen/ad_vertical_margin"
+                                android:orientation="vertical" />
+
+                            <!-- * LAUNCHER * -->
+
+                            <TextView
+                                android:id="@+id/textView_section_launcher"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_area_height"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/setting_section_launcher"
+                                android:textColor="@color/section_text_color"
+                                android:textSize="@dimen/section_text_size"
+                                android:textStyle="bold" />
+
+                            <!-- ライン (太) -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_underline_divider_weight"
+                                android:background="@color/section_underline_divider_color" />
+
+                            <!-- ランチャーの有効化 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableLauncher"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_enableLauncher"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_launcher"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_enableLauncher"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableLauncher_borderline"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- アクセサリの色 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_launcherAccessoryColor"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_launcherAccessoryColor"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:paddingRight="18dp"
+                                    android:text="@string/setting_launcher_accessory_color"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="8"
+                                    android:gravity="center_vertical|right"
+                                    android:paddingLeft="@dimen/activity_vertical_margin"
+                                    android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                    <View
+                                        android:id="@+id/view_value_launcherAccessoryColor"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="center|right" />
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- 背景色 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_launcherBgColor"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_launcherBgColor"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:paddingRight="18dp"
+                                    android:text="@string/setting_launcher_bg_color"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- アニメーションの有効化 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_animatonState"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_animatonState"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_animation"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_animatonState"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- ブート時に自動起動 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_autorunService"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_autorunService"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_autorun_service"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_autorunService"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- 戻るキーのアクション -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_actionOfBackkey"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_actionOfBackkey"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_action_of_backkey"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <TextView
+                                    android:id="@+id/textView_state_actionOfBackkey"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_action_of_backkey_back"
+                                    android:textSize="@dimen/item_text_size"  />
+                            </LinearLayout>
+
+                            <!-- * MAGAZINE * -->
+
+                            <TextView
+                                android:id="@+id/textView_section_magazine"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_area_height"
+                                android:layout_marginTop="@dimen/section_top_margin"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/setting_section_magazine"
+                                android:textColor="@color/section_text_color"
+                                android:textSize="@dimen/section_text_size"
+                                android:textStyle="bold" />
+
+                            <!-- ライン (太) -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_underline_divider_weight"
+                                android:background="@color/section_underline_divider_color" />
+
+                            <!-- 連装数 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_revolvers"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_revolvers"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_revolvers"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <TextView
+                                    android:id="@+id/textView_value_revolvers"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:layout_weight="8"
+                                    android:gravity="center_vertical|right"
+                                    android:text="0"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_revolvers_borderline"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- 半径 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_revolverRadius"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_revolverRadius"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_revolver_rad"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <TextView
+                                    android:id="@+id/textView_value_revolverRadius"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:layout_weight="8"
+                                    android:gravity="center_vertical|right"
+                                    android:text="0"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- * BULLET * -->
+
+                            <TextView
+                                android:id="@+id/textView_section_bullet"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_area_height"
+                                android:layout_marginTop="@dimen/section_top_margin"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/setting_section_bullet"
+                                android:textColor="@color/section_text_color"
+                                android:textSize="@dimen/section_text_size"
+                                android:textStyle="bold" />
+
+                            <!-- ライン (太) -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_underline_divider_weight"
+                                android:background="@color/section_underline_divider_color" />
+
+                            <!-- 弾数 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_bullets"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_bullets"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_bullets"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <TextView
+                                    android:id="@+id/textView_value_bullets"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:layout_weight="8"
+                                    android:gravity="center_vertical|right"
+                                    android:text="0"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_bullets_borderline"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- 弾サイズ -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_iconSize"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_iconSize"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_bullets_size"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <TextView
+                                    android:id="@+id/textView_value_iconSize"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:layout_weight="8"
+                                    android:gravity="center_vertical|right"
+                                    android:text="10"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- * STARTER BAR * -->
+
+                            <TextView
+                                android:id="@+id/textView_section_starterBar"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_area_height"
+                                android:layout_marginTop="@dimen/section_top_margin"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/setting_section_starter_bar"
+                                android:textColor="@color/section_text_color"
+                                android:textSize="@dimen/section_text_size"
+                                android:textStyle="bold" />
+
+                            <!-- ライン (太) -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_underline_divider_weight"
+                                android:background="@color/section_underline_divider_color" />
+
+                            <!-- スターターバー (左) の状態 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_starterBarLeftState"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_starterBarLeftState"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_starterbar_left_state"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_starterBarLeft"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- スターターバー (右) の状態 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_starterBarRightState"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_starterBarRightState"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_starterbar_right_state"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_starterBarRight"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- スターターバー (左) の位置 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_starterBarLeftSizeAndPos"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_starterBarLeftSizeAndPos"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:paddingRight="18dp"
+                                    android:text="@string/setting_starterbar_left_size_pos"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- スターターバー (右) の位置 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_starterBarRightSizeAndPos"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_starterBarRightSizeAndPos"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_starterbar_right_size_pos"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- スターターバーの色 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_starterBarColor"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_starterBarColor"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_starterbar_color"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- 広告用スペース -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_adspace_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/ad_vertical_margin"
+                                android:layout_marginTop="@dimen/ad_vertical_margin"
+                                android:orientation="vertical" />
+
+                            <!-- * SPECIAL BUTTON * -->
+
+                            <TextView
+                                android:id="@+id/textView_section_specialButton"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_area_height"
+                                android:layout_marginTop="@dimen/section_top_margin"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/setting_section_special_button"
+                                android:textColor="@color/section_text_color"
+                                android:textSize="@dimen/section_text_size"
+                                android:textStyle="bold" />
+
+                            <!-- ライン (太) -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_underline_divider_weight"
+                                android:background="@color/section_underline_divider_color" />
+
+                            <!-- 戻るボタン有効化 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableBackkey"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_enableBackkey"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_backkey"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_enableBackkey"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableBackkey_borderline"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- ホームボタン有効化 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableHomekey"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_enableHomekey"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_homekey"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_enableHomekey"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- 最近使ったアプリボタン有効化 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableRecentAppskey"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_enableRecentAppskey"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_recentappskey"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_enableRecentAppskey"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableRecentApps_borderline"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- 通知領域展開ボタン有効化 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableNotificationskey"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_enableNotificationskey"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_notificationskey"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_enableNotificationskey"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- * ACCESSORY * -->
+
+                            <TextView
+                                android:id="@+id/textView_section_accessory"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_area_height"
+                                android:layout_marginTop="@dimen/section_top_margin"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/setting_section_accessory"
+                                android:textColor="@color/section_text_color"
+                                android:textSize="@dimen/section_text_size"
+                                android:textStyle="bold" />
+
+                            <!-- ライン (太) -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_underline_divider_weight"
+                                android:background="@color/section_underline_divider_color" />
+
+                            <!-- 時計有効化 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableClock"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_enableClock"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_clock"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_enableClock"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- 時計＆日付のカスタマイズ -->
+                            
+                            <LinearLayout
+                                android:id="@+id/linearLayout_custom_clock_and_date"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_custom_clock_and_date"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_custom_clock_and_date"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- リソースメータ有効化 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_enableResMeter"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_enableResMeter"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_enable_res_meter"
+                                    android:textSize="@dimen/item_text_size" />
+
+                                <ToggleButton
+                                    android:id="@+id/toggleButton_state_enableResMeter"
+                                    android:layout_width="@dimen/toggle_button_width"
+                                    android:layout_height="@dimen/toggle_button_height"
+                                    android:layout_marginLeft="@dimen/item_horizontal_padding"
+                                    android:background="@drawable/toggle_background"
+                                    android:button="@drawable/toggle_button"
+                                    android:gravity="center_vertical"
+                                    android:text=""
+                                    android:textOff=""
+                                    android:textOn="" />
+                            </LinearLayout>
+
+                            <!-- 広告用スペース -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_adspace_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/ad_vertical_margin"
+                                android:layout_marginTop="@dimen/ad_vertical_margin"
+                                android:orientation="vertical" />
+
+                            <!-- * GENERAL * -->
+
+                            <TextView
+                                android:id="@+id/textView_section_general"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_area_height"
+                                android:layout_marginTop="@dimen/section_top_margin"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/setting_section_general"
+                                android:textColor="@color/section_text_color"
+                                android:textSize="@dimen/section_text_size"
+                                android:textStyle="bold" />
+
+                            <!-- ライン (太) -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/section_underline_divider_weight"
+                                android:background="@color/section_underline_divider_color" />
+
+                            <!-- アプリについて -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_aboutApp"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_aboutApp"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/about_app"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_upgrade_border"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- フルエディションへのアップグレード -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_upgrade"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_upgrade"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/setting_upgrade_to_full_edition"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+
+                            <!-- 以降、デバッグ用 -->
+
+
+                            <!-- ライン -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_border_debug_0"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_divider_weight"
+                                android:background="#33000000" />
+
+                            <!-- デバッグ: フルエディション購入状態切替 -->
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout_item_debug_change_channel"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/item_area_height"
+                                android:background="@drawable/item_selected_background"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:paddingRight="@dimen/activity_horizontal_margin" >
+
+                                <TextView
+                                    android:id="@+id/textView_item_debug_change_channel"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:gravity="center_vertical"
+                                    android:text="*DEBUG* CHANGE THE CHANNEL"
+                                    android:textSize="@dimen/item_text_size" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ScrollView>
+                    <!-- Setting - end -->
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

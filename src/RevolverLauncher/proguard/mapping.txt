@@ -1,0 +1,21 @@
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+source-code/RevolverLauncher/bin
+source-code/RevolverLauncher/gen
+
+# Local configuration file
+local.properties
+
+# Eclipse settings
+source-code/RevolverLauncher/.classpath
+source-code/RevolverLauncher/.project
+source-code/RevolverLauncher/.settings/

@@ -1,5 +1,9 @@
 # Revolver Launcher
 
+<div align="center">
+  <img src="https://github.com/gcch/revolver-launcher/blob/master/img/icon/tsuyukusa%20(007BC3)/ic_launcher.png" alt="" title="Revolver Launcher">
+</div>
+
 ## Overview
 
 随分昔に作成した、弾倉をイメージした Android 向けランチャーアプリ。
